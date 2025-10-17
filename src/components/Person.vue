@@ -1,11 +1,7 @@
 <template>
   <div class="person">
-    <h2>姓名：{{ person.name }}</h2>
-    <h2>年龄：{{ person.age }}</h2>
-    <input v-model="name" placeholder="输入新姓名" />
-    <button @click="changeName">修改姓名</button>
-    <input v-model="age" type="number" placeholder="输入新年龄" />
-    <button @click="changeAge">修改年龄</button>
+    <h2>当前求和为：{{ sum }}</h2>
+    <button @click = "add">+1</button>
   </div>
 </template>
 
@@ -17,20 +13,10 @@ export default {
 
 <script setup lang="ts">
 import { reactive, ref, toRefs } from 'vue'
-let person = reactive({
-  name: '张三',
-  age: 18,
-  newName: String(''),
-  newAge: Number(0)
-})
-let { name, age } = toRefs(person)
-let newName = toRefs(person)
+let sum = ref(0);
 
-function changeName() {
-  name.value += '~'
-}
-function changeAge() {
-  age.value += 1
+function add() {
+  sum.value++;
 }
 </script setup>
 

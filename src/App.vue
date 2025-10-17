@@ -1,16 +1,20 @@
 <template>
-  <person />
+  <Person />
 </template>
 
 <script>
-import Person from './components/Person.vue'
-import Car from './components/Car.vue'
 export default {
   name: 'App',
   components: {
     Person,
   },
 }
+</script>
+
+<script setup>
+import Person from './components/Person.vue';
+
+let isShow = true;
 </script>
 
 <style scoped>
